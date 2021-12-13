@@ -1,4 +1,4 @@
-# Bleeding-Ink
+# Blogging
 This is a single user or a single group (depends upon the number of super-user) blog application powered by django framework that provides the main function you'd 
 expect from a blog app like creating blog, commenting, deleting a blog, etc..
 
