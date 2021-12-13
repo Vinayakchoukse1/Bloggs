@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="centerstage">
+    {% for post in post_list %}
+        <div class="post">
+          <h1><a class="postkatitle" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          {% if post.images %}
+            <div class="listimagediv">
+              <img src="{{ post.images.url }}" class="listimageback" alt="">
+              <img src="{{ post.images.url }}" class="listimage" alt="">
+            </div>
+          {% endif %}
+          <div class="texts">
+            <p>{{ post.text|safe|linebreaksbr|striptags }}</p>
+          </div>
+          <div class="date">
+            <p>Published on: {{ post.published_date|date:"D M Y"}}</p>
+          </div>
+          <a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration: none;">Comments: {{ post.comments.count }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

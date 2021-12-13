@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+  <div class="jumbotron">
+
+    <h2>Please fill the required details: </h2>
+
+    <form method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+
+    <input type="submit" class='btn btn-primary' value="Signup" />
+    </form>
+  </div>
+{% endblock %}
